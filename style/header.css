@@ -1,0 +1,42 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling the header */
+header {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Styling the navigation list */
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+/* Styling the list items */
+header ul li {
+  position: relative;
+}
+
+/* Styling the links */
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Link hover effect */
+header ul li a:hover {
+  background-color: #fff;
+  color: #333;
+  border-radius: 4px;
+}
