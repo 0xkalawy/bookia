@@ -5,7 +5,7 @@
     }
     function redirect_on_signin(){
         if(isLogged()){
-            header("Location: /bookia/home.php?user=".$_SESSION['username']);
+            header("Location: /bookia/home.php");
             exit;
         }
     }

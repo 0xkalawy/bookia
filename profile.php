@@ -53,6 +53,17 @@
             <input type="text" name="name" value="<?php echo $_SESSION['name']; ?>">
             <label for="email">Email</label>
             <input type="email" name="email" value="<?php echo $_SESSION['email']; ?>">
+            <div class="radio-group">
+                <?php
+                    $r1 = $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'seller' ? 'seller' : 'buyer';
+                    $r2 = $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'seller' ? 'buyer' : 'seller';
+                ?>
+                <input type="radio" name="role" id="role1" value="<?php echo $r1; ?>" checked>
+                <label for="role1"><?php echo $r1; ?></label>
+
+                <input type="radio" name="role" id="role2" value="<?php echo $r2; ?>">
+                <label for="role2"><?php echo $r2; ?></label>
+            </div>
             <label for="password">Password</label>
             <input type="password" name="password">
             <label for="repassword">Retype Password</label>

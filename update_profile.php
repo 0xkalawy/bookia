@@ -34,6 +34,10 @@
             }else{
                 array_push($response,"Email is already exist");
             }
+        }if($_REQUEST['role']!==$_SESSION['role']){
+            $sql->query("UPDATE users SET role='".$_REQUEST['role']."' WHERE email='".$_SESSION['email']."'");
+            $_SESSION['role'] = $_REQUEST['role'];
+            array_push($response,"role Updated Successfully");
         }
         echo !empty($response) ? json_encode(["message"=>implode("<br>",$response)]):null;
     }

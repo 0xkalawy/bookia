@@ -71,17 +71,34 @@ input[type="submit"]:hover {
   display: none;
 }
 
-.response.success {
-  background-color: green;
-  color: white;
+/* Style for the radio buttons */
+input[type="radio"] {
+  display: none; /* Hide the actual radio button */
 }
 
-.response.error {
-  background-color: red;
-  color: white;
+input[type="radio"] + label {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f4f4f4;
 }
 
-.response.warning {
-  background-color: yellow;
-  color: black;
+input[type="radio"]:checked + label {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+}
+
+input[type="radio"]:not(:checked) + label:hover {
+  background-color: #ddd;
+}
+
+/* Container for radio buttons to make them inline */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the gap between the radio buttons as needed */
 }

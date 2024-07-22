@@ -26,7 +26,7 @@
             $_SESSION['name'] = $result[1];
             $_SESSION['username'] = $result[2];
             $_SESSION['email'] = $result[3];
-            $_SESSION['role'] = $result[4];
+            $_SESSION['role'] = $result[5];
             return "success";
         }else{
             return "invalid username and/or password";
