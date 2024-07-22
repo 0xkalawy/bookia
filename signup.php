@@ -5,19 +5,19 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
         if(empty($_REQUEST['name']) || empty($_REQUEST['username']) || empty($_REQUEST['email']) || empty($_REQUEST['password'])){
             echo json_encode(["message" => "Please Enter all credentials"]);
-        }else if(strlen($_REQUEST['password'])<=8){
-            echo json_encode(["message" => "Password Should be more than 8 characters"]);
-        }else if(!preg_match("@[A-Z]@",$_REQUEST['password']) || !preg_match("@[a-z]@",$_REQUEST['password'])|| !preg_match("@[0-9]@",$_REQUEST['password']) || !preg_match("@[^\w]@",$_REQUEST['password'])) {
-            echo json_encode(["message" => "Passowrd should contain Uppercases, Lowercases, Digits, and Special Characters"]);
         }else{
-            $result = $sql->query("SELECT * FROM users WHERE username='{$_REQUEST['username']}' OR email= '{$_REQUEST['email']}'")->fetch_row();
-            if(!empty($result)){
-                echo json_encode(["message" => "Username or/and Email is already exist"]);
-            }else if($_REQUEST['password']!=$_REQUEST['repassword']){
-                echo json_encode(["message"=>"Password isn't identical"]);
+            $check_pass = check_password($_REQUEST['password'],$_REQUEST['repassword']);
+            if($check_pass === true){
+                $result = $sql->query("SELECT * FROM users WHERE username='{$_REQUEST['username']}' OR email= '{$_REQUEST['email']}'")->fetch_row();
+                if(!empty($result)){
+                    echo json_encode(["message" => "Username or/and Email is already exist"]);
+                }else{
+                    $sql->query("INSERT into users(name,username,email,password,role) VALUES('".$_REQUEST["name"]."','".$_REQUEST["username"]."','".$_REQUEST["email"]."','".$_REQUEST["password"]."','".$_REQUEST['role']."')");
+                    echo init_session($_REQUEST['username'],$_REQUEST['password'])=="success"? json_encode(["message" => "Registered Successfully","redirect"=>"/bookia/home.php"]):json_encode(["message" => "There is a problem"]);
+                }
             }else{
-                $sql->query("INSERT into users(name,username,email,password,role) VALUES('".$_REQUEST["name"]."','".$_REQUEST["username"]."','".$_REQUEST["email"]."','".$_REQUEST["password"]."','".$_REQUEST['role']."')");
-                echo init_session($_REQUEST['username'],$_REQUEST['password'])=="success"? json_encode(["message" => "Registered Successfully","redirect"=>"/bookia/home.php"]):json_encode(["message" => "There is a problem"]);
+                global $check_pass;
+                echo json_encode(["message"=>implode($check_pass)]);
             }
         }
     }

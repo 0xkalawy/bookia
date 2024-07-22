@@ -33,7 +33,15 @@
         }
     }
     
-    // Check Password Strength
-    function pass_strength(){
-
+    // Check Password Strength and identicality
+    function check_password($password,$repassword){
+        if(strlen($password)<=8){
+            return ["Password Should be more than 8 characters"];
+        }else if(!preg_match("@[A-Z]@",$password) || !preg_match("@[a-z]@",$password)|| !preg_match("@[0-9]@",$password) || !preg_match("@[^\w]@",$password)) {
+            return ["Passowrd should contain Uppercases, Lowercases, Digits, and Special Characters"];
+        }else if($password!==$repassword){
+            return ["Passwords aren't identical"];
+        }else{
+            return true;
+        }
     }

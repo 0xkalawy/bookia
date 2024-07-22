@@ -7,8 +7,9 @@
             update_image($_FILES['image']);
             array_push($response,"Image Update Successfully");
         }if(!empty($_REQUEST['password'])){
-            if($_REQUEST['password']!==$_REQUEST['repassword']){
-                array_push($response, "Password are not the same");
+            $check_pass = check_password($_REQUEST['password'],$_REQUEST['repassword']);
+            if($check_pass!== true){
+                array_push($response,$check_pass);
             }else{
                 $sql->query("UPDATE users SET password='".$_REQUEST['password']."' WHERE username='".$_SESSION['username']."'");
                 array_push($response, "Password Updated Correctly");
