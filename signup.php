@@ -33,30 +33,40 @@
     <title>Sign Up</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Sign Up Form</h2>
-        <form id="signupForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <label for="repassword">Retype your password:</label>
-            <input type="password" id="repassword" name="repassword" required>
-            <input type="radio" name="role" id="role" value="buyer" required>Buyer
-            <input type="radio" name="role" id="role" value="seller" required>Seller
-            <div class="button-group">
-                <input type="submit" value="Sign Up">
-                <input type="reset" value="Reset">
-            </div>
-        </form>
-        <div id="response" class="response"></div>
+    <?php require_once("./header.php") ?>
+    <div class="noheader">
+        <div class="container">
+            <h2>Sign Up Form</h2>
+            <form id="signupForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="radio-group">
+                    Role:
+                </label>
+                <div class="radio-group">
+                    <input type="radio" name="role" id="role1" value="buyer" checked>
+                    <label for="role1">Buyer</label>
+
+                    <input type="radio" name="role" id="role2" value="seller">
+                    <label for="role2">Seller</label>
+                </div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="repassword">Retype your password:</label>
+                <input type="password" id="repassword" name="repassword" required>
+                <div class="button-group">
+                    <input type="submit" value="Sign Up">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+            <div id="response" class="response"></div>
+        </div>
     </div>
 </body>
 <script>
