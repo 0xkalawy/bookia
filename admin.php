@@ -87,6 +87,7 @@
                 $query->bind_param("d", $id);
                 if($query->execute()){
                     echo ("Deleted Done Successfully");
+                    http_response_code(200);
                     exit;
                 }
             }
@@ -105,7 +106,7 @@
         xhr.send("type=" + type + "&id=" + id);
         xhr.onreadystatechange = function(){
             if(this.readyState==4){
-                if(this.responseText=="Deleted Done Successfully"){
+                if(this.status==200){
                     window.location.reload();
                 }
             }
