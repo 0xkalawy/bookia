@@ -1,81 +1,131 @@
 /* Styling for the book container */
 .book {
-    display: inline-block;
-    margin: 20px;
-    text-align: center;
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
 }
 
 .book img {
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .book p {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 /* Add Book Modal */
 #addBookDiv {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #addBookDiv form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #addBookDiv label {
-    margin-bottom: 5px;
-    font-weight: bold;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 #addBookDiv input[type="text"],
 #addBookDiv input[type="file"] {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 #addBookDiv input[type="submit"] {
-    padding: 10px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #addBookDiv input[type="submit"]:hover {
-    background-color: #218838;
+  background-color: #218838;
 }
 
 /* Button to show the add book form */
 button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
+}
+.book {
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+}
+
+.book img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#addBookDiv {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#addBookDiv form {
+  display: flex;
+  flex-direction: column;
+}
+
+#addBookDiv label {
+  margin-bottom: 5px;
+}
+
+#addBookDiv input[type="text"],
+#addBookDiv input[type="number"],
+#addBookDiv input[type="file"] {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#addBookDiv input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

@@ -1,6 +1,6 @@
 <?php
     $sql = new mysqli('localhost','root','','bookia');
-    $images_path = "./images/";
+    $images_path = "./images/users/";
 
     // Get profile image path
     function image_path($id){

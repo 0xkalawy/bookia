@@ -1,8 +1,4 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/header.css">
-</head>
+<link rel="stylesheet" href="./style/header.css">
 <header>
     <ul>
         <li><a href="/bookia/">Bookia</a></li>
@@ -16,6 +12,10 @@
                     if ($_SESSION['role'] === 'seller'){
                 ?>
                         <li><a href="/bookia/seller.php">Seller Portal</a></li>
+                <?php
+                    }else if($_SESSION['role'] === 'admin'){
+                ?>
+                        <li><a href="./admin.php">Admin Portal</a></li>
                 <?php
                     }
                 ?>
