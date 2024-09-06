@@ -15,3 +15,7 @@
             exit;
         }
     }
+
+    function isSeller(){
+        return $_SESSION['role'] === 'seller';
+    }
